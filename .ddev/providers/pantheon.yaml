@@ -41,7 +41,7 @@
 # `ddev exec terminus site:list` will show available sites
 
 environment_variables:
-  project: 0cc04005-3caa-4e9e-a218-fc5090b18b76.dev
+  project: aulas-upskill-358.dev
 
 auth_command:
   command: |
