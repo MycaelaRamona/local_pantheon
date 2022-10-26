@@ -27,7 +27,6 @@ phrases and it\'ll do the rest.</p>
       ');
   }
 }
-
 /**
  * Implements hook_theme().
  */
@@ -50,12 +49,12 @@ function loremipsum_theme($existing, $type, $theme, $path) {
  *   - source_text
  */
 function template_preprocess_loremipsum(&$variables) {
-  $punctuation = array('. ', '! ', '? ', '... ', ': ', '; ');
-  for ($i = 0; $i < count($variables['source_text']); $i++) {
-    $big_text = explode('. ', $variables['source_text'][$i]);
-    for ($j = 0; $j < count($big_text) - 1; $j++) {
-      $big_text[$j] .= $punctuation[floor(mt_rand(0, count($punctuation) - 1))];
+    $punctuation = array('. ', '! ', '? ', '... ', ': ', '; ');
+    for ($i = 0; $i < count($variables['source_text']); $i++) {
+      $big_text = explode('. ', $variables['source_text'][$i]);
+      for ($j = 0; $j < count($big_text) - 1; $j++) {
+        $big_text[$j] .= $punctuation[floor(mt_rand(0, count($punctuation) - 1))];
+      }
+      $variables['source_text'][$i] = implode('', $big_text);
     }
-    $variables['source_text'][$i] = implode('', $big_text);
-  }
 }

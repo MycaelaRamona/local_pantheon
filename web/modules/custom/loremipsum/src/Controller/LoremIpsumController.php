@@ -23,7 +23,7 @@ class LoremIpsumController {
    * @param string $phrases
    *   The maximum amount of phrases that can be generated inside a paragraph.
    */
-  public function generate($paragraphs, $phrases) {
+  public function generate($paragraphs, $phrases) {  
     // Default settings.
     $config = \Drupal::config('loremipsum.settings');
     // Page title and source text.
